@@ -1,6 +1,8 @@
-bcrypt
-flask
-waitress
-jwt
-flask_httpauth
-flask_negotiate
+waitress==1.4.4
+Flask_HTTPAuth==4.1.0
+Flask_Negotiate==0.1.0
+psycopg2==2.8.6
+Flask==0.12.2
+PyJWT==1.7.1
+python-dotenv==0.14.0
+python_bcrypt==0.3.2
