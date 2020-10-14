@@ -1,9 +1,10 @@
-from ..controllers import legacy_controller
-from ..auth import authentification
+from ..controllers import product_controller
+from ..authentication import auth
 from flask import Flask, request
 from flask_httpauth import HTTPBasicAuth
 
 from flask_negotiate import consumes, produces
+
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -13,22 +14,19 @@ def ping_status():
     return "OK"
 
 @auth.verify_password
-@limiter.exempt
 def authenticate(username, password):
     return authentification.verify_password(username)
 
 @app.route('/product', methods=['GET'])
-@auth.login_required
-@produces('application/json')
+#@produces('application/json')
 def show_products():
-    #TODO
+    response = product_controller.list_products()
     return response
 
-@app.route('/product/<int:product_id>', methods=['GET'])
-@auth.login_required
-@produces('application/json')
+@app.route('/product/<product_id>', methods=['GET'])
+#@produces('application/json')
 def show_product(product_id):
-    #TODO
+    response = product_controller.list_product(product_id)
     return response
 
 @app.route('/product/<int:product_id>', methods=['DELETE'])

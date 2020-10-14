@@ -1,4 +1,4 @@
-from app.View import router
+from api.views import router
 from waitress import serve
 
 if __name__ == "__main__":
