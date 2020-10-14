@@ -1,1 +1,6 @@
-requirements.txt
+bcrypt
+flask
+waitress
+jwt
+flask_httpauth
+flask_negotiate
