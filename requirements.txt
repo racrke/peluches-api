@@ -1,5 +1,7 @@
 waitress==1.4.4
+werkzeug==0.16.1
 Flask_HTTPAuth==4.1.0
+flask_cors
 Flask_Negotiate==0.1.0
 psycopg2==2.8.6
 Flask==0.12.2
