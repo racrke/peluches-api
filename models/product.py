@@ -80,6 +80,6 @@ def to_json(record):
         return { "pid": record[0] ,
        "name": record[1] ,
        "pType": record[2], 
-       "images": record[5] , 
+       "images": record[4] , 
         "prices": str(record[3] ), 
         "stock":record[5]}
