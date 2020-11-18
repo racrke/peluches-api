@@ -7,6 +7,7 @@ class Product:
     images = None
     price = None
     stock = None
+    description = None
 
     def to_tuple(self):
         return(self.name,self.p_type,self.images,self.price,self.stock,self.ID)
@@ -27,6 +28,7 @@ class Product:
         self.images = record["imgs"]
         self.price = record["price"]
         self.stock = record["stock"]
+        self.description = record["descripcion"]
 
 
     def insert(self):
@@ -74,7 +76,8 @@ class Product:
        "pType": self.p_type, 
        "images": self.images , 
         "prices": str(self.price) , 
-        "stock":self.stock }
+        "stock":self.stock,
+        "description":self.description }
     
 def to_json(record):
         return { "pid": record["pid"] ,
@@ -82,4 +85,7 @@ def to_json(record):
        "pType": record["ptype"], 
        "images": record["imgs"] , 
         "prices": str(record["price"] ), 
-        "stock":record["stock"]}
+        "stock":record["stock"],
+        "description":record["descripcion"]}
+
+
