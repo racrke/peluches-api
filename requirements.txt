@@ -11,3 +11,4 @@ werkzeug==0.16.1
 uuid
 datetime
 json
+bcrypt==3.2.0
