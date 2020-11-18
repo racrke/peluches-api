@@ -1,6 +1,6 @@
 import psycopg2
 from psycopg2 import Error
-
+from psycopg2.extras import RealDictCursor
 
 class Repo:
 
@@ -13,7 +13,8 @@ class Repo:
                                             password = "hmsdwpHmqPPbvmyL",
                                             host = "34.123.147.152",
                                             port = "5432",
-                                            database = "postgres")
+                                            database = "postgres",
+                                            cursor_factory=RealDictCursor)
 
             self.cursor = self.connection.cursor()
 

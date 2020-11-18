@@ -8,3 +8,6 @@ PyJWT==1.7.1
 python-dotenv==0.15.0
 python_bcrypt==0.3.2
 werkzeug==0.16.1
+uuid
+datetime
+json

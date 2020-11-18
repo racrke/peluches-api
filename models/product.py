@@ -21,12 +21,12 @@ class Product:
         record = repo.cursor.fetchone()
         repo.close()
         
-        self.ID = record[0]
-        self.name = record[1]
-        self.p_type = record[2]
-        self.images = record[5]
-        self.price = record[3]
-        self.stock = record[4]
+        self.ID = record["pid"]
+        self.name = record["name"]
+        self.p_type = record["ptype"]
+        self.images = record["imgs"]
+        self.price = record["price"]
+        self.stock = record["stock"]
 
 
     def insert(self):
@@ -77,9 +77,9 @@ class Product:
         "stock":self.stock }
     
 def to_json(record):
-        return { "pid": record[0] ,
-       "name": record[1] ,
-       "pType": record[2], 
-       "images": record[4] , 
-        "prices": str(record[3] ), 
-        "stock":record[5]}
+        return { "pid": record["pid"] ,
+       "name": record["name"] ,
+       "pType": record["ptype"], 
+       "images": record["imgs"] , 
+        "prices": str(record["price"] ), 
+        "stock":record["stock"]}

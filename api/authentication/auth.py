@@ -15,7 +15,7 @@ def verify_token(token):
     
     if token:
         resp = decode_auth_token(token)
-        if repo.User().get(resp):
+        if repo.User().get_with_email(resp):
             return True
 
     else:
@@ -29,9 +29,10 @@ def user_exists(email, password):
     """
     user = repo.User()
     exists = user.get(email)
+    print(exists)
     if exists:
 
-    	#BD CONNECT
+        #BD CONNECT
         bd_password = base64.b64decode(user.password)
         if bcrypt.checkpw(password.encode(),bd_password):
             return True
