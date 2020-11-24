@@ -28,7 +28,7 @@ def user_exists(email, password):
     :return: true if users and password matches
     """
     user = repo.User()
-    exists = user.get(email)
+    exists = user.get_with_email(email)
     print(exists)
     if exists:
 
